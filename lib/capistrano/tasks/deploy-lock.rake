@@ -122,8 +122,8 @@ namespace :deploy do
     end
   end
 
-  before 'deploy:started', 'check_lock'
-  before 'deploy:started', 'create_lock'
+  before 'deploy:starting', 'check_lock'
+  before 'deploy:starting', 'create_lock'
   after 'deploy:published', 'unlock:default'
   after 'deploy:rollback', 'unlock:default'
   after 'deploy:failed', 'unlock:default'
